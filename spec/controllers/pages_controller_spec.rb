@@ -4,6 +4,10 @@ describe PagesController do
 
   render_views
 
+  before(:each) do
+    @basic_title = "Mon tutoriel Ruby On Rails"
+  end
+
   describe "GET 'home'" do
     it "should be successful" do
       get 'home'
@@ -12,7 +16,7 @@ describe PagesController do
 
     it "should have a title" do
       get 'home'
-      response.should have_selector("title", :content => "Mon tutoriel Ruby On Rails")
+      response.should have_selector("title", :content => @basic_title + " | Accueil")
     end
   end
 
@@ -23,8 +27,8 @@ describe PagesController do
     end
 
     it "should have a title" do
-      get 'home'
-      response.should have_selector("title", :content => "Mon tutoriel Ruby On Rails")
+      get 'contact'
+      response.should have_selector("title", :content => "Mon tutoriel Ruby On Rails | Contact")
     end
   end
 
@@ -35,9 +39,20 @@ describe PagesController do
     end
 
     it "should have a title" do
-      get 'home'
-      response.should have_selector("title", :content => "Mon tutoriel Ruby On Rails")
+      get 'about'
+      response.should have_selector("title", :content => @basic_title + " | A propos")
     end
   end
 
+  describe "GET 'help'" do
+    it "should be successful" do
+      get 'help'
+      response.should be_success
+    end
+
+    it "should have a title" do
+      get 'help'
+      response.should have_selector("title", :content => @basic_title + " | Aide")
+    end
+  end
 end
