@@ -2,6 +2,8 @@
   width: 710px;
 }
 
+.clear{clear:both;}
+
 body {
   background: #cff;
 }
@@ -94,6 +96,16 @@ nav ul li a:visited {
 nav ul li a:hover {
   text-decoration: underline;
 }
+
+/* PROFILE */
+
+#profile .main{width:60%; float:left;}
+#profile .main .gravatar{border:1px solid #aaa;}
+#profile aside{width:30%; padding: 3% 5%; float: left; background: #ffc;}
+#profile aside ul>li{list-style: none; margin-bottom: 5px;}
+#profile aside ul li>span{font-weight: bold;}
+
+/* FOOTER */
 
 footer {
   text-align: center;

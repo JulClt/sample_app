@@ -1,1 +1,21 @@
-<%= @user.nom %> <%= @user.email %>
+<div id="profile">
+	
+	<div class="main">
+		
+		<h1>
+			<%= gravatar_for @user %>
+			<%= @user.nom %>
+		</h1>
+
+	</div>
+
+	<aside class="round">
+		<ul>
+			<li><span>Nom : </span><%= @user.nom %></li>
+			<li><span>URL : </span><%= link_to user_path(@user), @user %></li>
+		</ul>
+	</aside>
+
+</div>
+
+<div class="clear"></div>
